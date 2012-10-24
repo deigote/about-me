@@ -7,6 +7,10 @@ h1 {
     margin: 0.5em 0;
 }
 
+img {
+    border: none;
+}
+
 div#background-container {
     background: url('avatar-big.jpg') no-repeat;
     margin: auto;
