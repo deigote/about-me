@@ -1,4 +1,6 @@
-body { font-family: "Ubuntu", "Arial", "Helvetica", "Lucida Grande", "Verdana", "Gill Sans", sans-serif; font-size: 14px; }
+body { text-shadow: 0 1px 0 rgba(0,0,0,0.01); }
+
+body { font-family: "Ubuntu", "Arial", "Helvetica", "Lucida Grande", "Verdana", "Gill Sans", sans-serif; font-size: 14px }
 
 h1, h2 { font-family: "Sansation", "Lucida Grande", "Verdana", "Arial", "Gill Sans", "Helvetica", sans-serif; ;}
 
