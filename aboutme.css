@@ -1,0 +1,63 @@
+body {
+    background-color: #000;
+}
+
+h1 {
+    text-align: center;
+    margin: 0.5em 0;
+}
+
+div#background-container {
+    background: url('avatar-big.jpg') no-repeat;
+    margin: auto;
+    width: 80%;
+    margin-top: 2em;
+    min-height: 683px;
+    max-width: 1024px;
+}
+
+div#main-content {
+    background-color: #FFFFFF;
+    float: left;
+    margin: 1em 1em 1em 475px;
+    opacity: 0.80;
+    padding: 1em;
+    filter: alpha(opacity=80);
+}
+
+.section {
+    clear: both;
+    margin: 1em 0 0 0;
+}
+
+.content {
+}
+
+.icon {
+    background-repeat: no-repeat;
+    background-position: left center;
+    padding-left: 75px;
+}
+
+.learn-more {
+    text-align: center;
+}
+
+.learn-more .links {
+    padding: 0;
+    margin: 0.5em 1em;
+}
+
+.learn-more .links li {
+    list-style: none;
+    display: inline;
+    margin-right: 10px;
+}
+
+div#personal .icon {
+    background-image: url('personal.png');
+}
+
+div#professional .icon {
+    background-image: url('professional.png');
+}

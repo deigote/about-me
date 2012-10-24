@@ -1,0 +1,65 @@
+<%
+    def printParagraphs = { paragraphs, out ->
+        paragraphs.each { paragraph -> out.println "<p>$paragraph</p>" }
+    }
+    def printLinks = { links, out ->
+        links.each { linkAttr -> out.println """
+            <li class='$linkAttr.tag'>
+                <a href='$linkAttr.url' title='$linkAttr.title'><img title='$linkAttr.title' alt='$linkAttr.title'src='${linkAttr.tag}.png'/></a>
+            </li>"""
+        }
+    }
+%>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+    <link rel="shortcut icon" href="$faviconURL" />
+    <link rel="stylesheet" type="text/css" href="aboutme.css" />
+    <link rel="stylesheet" type="text/css" href="fonts.css" />
+    <meta content="text/html; charset=UTF-8" http-equiv="content-type" />
+    <meta name="robots" content="index" />
+    <title>$title</title>
+    <meta property="og:site_name" content="$siteName" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:url" content="$siteURL" />
+    <link rel="canonical" id="page_url" href="$siteURL" />
+    <meta property="og:title" content="$title" />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="photo" />
+    <meta name="twitter:site" content="$twitterId" />
+    <meta name="twitter:creator" content="$twitterId" />
+    <meta name="twitter:image" content="$smallAvatarURL" />
+    <meta name="description" content="$shortDescription" />
+    <meta property="og:description" content="$shortDescription" />
+    <meta name="keywords" content="$shortDescription" />
+    <meta name="author" content="$author" />
+    <meta http-equiv="cleartype" content="on" />
+</head>
+    <body>
+        <div id="background-container">
+            <div id="main-content">
+                <h1>$greeting</h1>
+                <div id="professional" class="section">
+                    <div class="content icon">
+                        <% printParagraphs(professional_description, out) %>
+                    </div>
+                    <div class="learn-more">
+                        $learMore
+                        <ul class="links"><% printLinks(professional_links, out) %></ul>
+                    </div>
+                </div>
+                <div id="personal" class="section"><div class="section-wrapper">
+                    <div class="content icon">
+                        <% printParagraphs(personal_description, out) %>
+                    </div>
+                    <div class="learn-more">
+                        $learMore
+                        <ul class="links"><% printLinks(personal_links, out) %></ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
