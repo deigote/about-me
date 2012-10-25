@@ -3,3 +3,5 @@ index.html
 *.css.*
 *.js.*
 *.ico.*
+*.css_*.css
+*.js_*.js

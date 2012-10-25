@@ -12,9 +12,16 @@ def versionateFile(filePath, file = new File(filePath)) {
 	new File("$file.${md5(file)}") << file.bytes
 }
 
+String mixFiles(files) {
+	def file = new File((files*.toString()).join('_'))
+	file << files.collect { new File(it).text }.join("\n")
+}
+
 def parameters =  new ConfigSlurper().parse(new File('config.groovy').toURL())
 parameters.resources.each { type, urls ->
-	parameters.resources[type] = urls.collect { url -> versionateFile(url) }
+	parameters.resources[type] = (type in ['css', 'js' ] && urls) ?
+		[versionateFile(mixFiles(urls))] : 
+		urls.collect { url -> versionateFile(url) }
 }
 
 new File('index.html').write(new SimpleTemplateEngine().createTemplate(
