@@ -53,8 +53,8 @@ h1, h2 { font-family: "Sansation", "Lucida Grande", "Verdana", "Arial", "Gill Sa
 
 @font-face {
   font-family: 'Ubuntu';
-  src: url('fonts/Ubuntu-I-webfont.eot');
-  src: local('☺'), url('fonts/Ubuntu-I-webfont.woff') format('woff'), url('fonts/Ubuntu-I-webfont.ttf') format('truetype'), url('fonts/Ubuntu-I-webfont.svg#webfontX4pGz9fc') format('svg');
+  src: url('fonts/Ubuntu-RI-webfont.eot');
+  src: local('☺'), url('fonts/Ubuntu-RI-webfont.woff') format('woff'), url('fonts/Ubuntu-RI-webfont.ttf') format('truetype'), url('fonts/Ubuntu-RI-webfont.svg#webfontX4pGz9fc') format('svg');
   font-weight: 400;
   font-style: italic;
 }
