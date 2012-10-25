@@ -21,15 +21,22 @@
             </div>"""
         }.join()
     }
+    def printResources = { resources ->
+        resources.collect { type, urls ->
+            urls.collect { url ->
+                type == 'css' ? "<link rel='stylesheet' type='text/css' href='$url' />" :
+                type == 'ico' ? "<link rel='shortcut icon' href='$url' />" :
+                type == 'js' ? "<script type='text/javascript' src='$url' />" : ""
+            }.join('\n')
+        }.join('\n')
+    }
 %>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html>
 <head>
-    <link rel="shortcut icon" href="$faviconURL" />
-    <link rel="stylesheet" type="text/css" href="aboutme.css" />
-    <link rel="stylesheet" type="text/css" href="fonts.css" />
+    <%= printResources(resources) %>
     <meta content="text/html; charset=UTF-8" http-equiv="content-type" />
     <meta name="robots" content="index" />
     <title>$title</title>
