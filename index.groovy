@@ -26,7 +26,7 @@ jokes about being a beer taster""",
 		'j2ee', 'java', 'linux', 'sysadmin', 'cloud', 'amazon', 'aws', 'liferay', 'beer'
 	],
 	greeting: "$author",
-	professional_description: 
+	professional_paragraphs: 
 	[
 		"""I am a software engineer who has passion for <strong>software 
 developing</strong>. I work for <a href="http://osoco.es">$company</a> making products 
@@ -46,7 +46,7 @@ and <strong>Puppet</strong>."""
 		[title: "I Do The Shopping, a pet project written in Groovy and Grails", tag: 'idotheshopping', url: 'http://idotheshopping.com'],
 		[title: "My Best Lap, a pet project written in Ruby on Rails", tag: 'mybestlap', url: 'http://mybestlap.com']
 	],
-	personal_description:
+	personal_paragraphs:
 	[
 	"""When I'm not working, I like to joke about me being a <strong>beer</strong> taster.
 The truth is I enjoy good beer and I blog about it in <a href="http://unacervezaaldia.es">
@@ -63,8 +63,29 @@ and to do outdoor <strong>sports</strong>."""
 		[title: 'Dailymile', tag: 'dailymile', url: "http://www.dailymile.com/people/$nickname"],
 		[title: 'Soundtracking', tag: 'soundtracking', url: "http://soundtracking.com/$nickname"],
 	],
-	learMore: 'Learn more!'
+	learnMore: 'Learn more!',
+	piwik: """<!-- Piwik -->
+<script type="text/javascript">
+var pkBaseURL = (("https:" == document.location.protocol) ? 
+"https://stats.deigote.com/piwik/" : "http://stats.deigote.com/piwik/");
+document.write(unescape("%3Cscript src='" + pkBaseURL + "piwik.js' type='text/javascript'%3E%3C/script%3E"));
+</script><script type="text/javascript">
+try {
+var piwikTracker = Piwik.getTracker(pkBaseURL + "piwik.php", 2);
+piwikTracker.trackPageView();
+piwikTracker.enableLinkTracking();
+} catch( err ) {}
+</script><noscript><p><img src="http://stats.deigote.com/piwik/piwik.php?idsite=2" 
+style="border:0" alt=""/></p></noscript>
+<!-- End Piwik Tag -->""",
+	sections: [[name: "professional"], [name: "personal"]]
 ]
+
+
+parameters.sections.each { section ->
+	section.paragraphs = parameters["${section.name}_paragraphs"]
+	section.links = parameters["${section.name}_links"]
+}
 
 println new SimpleTemplateEngine().createTemplate(
 	new java.io.FileReader(new File('index.html.template'))
