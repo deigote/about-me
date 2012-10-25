@@ -60,6 +60,8 @@ and to do outdoor <strong>sports</strong>."""
 		[title: 'Una cerveza al dia', tag: 'una-cerveza-al-dia', url: 'http://unacervezaaldia.es'],
 		[title: 'Instagram', tag: 'instagram', url: "http://web.stagram.com/n/$nickname"],
 		[title: 'Flickr', tag: 'flickr', url: "http://www.flickr.com/photos/$nickname"],
+		[title: 'Dailymile', tag: 'dailymile', url: "http://www.dailymile.com/people/$nickname"],
+		[title: 'Soundtracking', tag: 'soundtracking', url: "http://soundtracking.com/$nickname"],
 	],
 	learMore: 'Learn more!'
 ]
