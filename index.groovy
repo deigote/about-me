@@ -1,6 +1,22 @@
 import groovy.text.SimpleTemplateEngine
 import java.security.MessageDigest
 
+def withNewFile(File file, closure)
+{
+	file.delete()
+	closure(file)
+	file.createNewFile()
+	return file
+}
+
+File.metaClass.leftShift = { Object content ->
+	withNewFile(delegate) { file -> file.append(content as String) }
+}
+
+File.metaClass.leftShift = { byte[] content ->
+	withNewFile(delegate) { file -> file.append(content) }
+}
+
 def md5(file) {
 	new BigInteger(1, MessageDigest.getInstance('MD5').with {
 		file.eachByte( 8192 ) { bfr, num -> update bfr, 0, num }
