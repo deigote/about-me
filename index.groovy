@@ -57,7 +57,7 @@ def mixFiles(files) {
 def parameters =  new ConfigSlurper().parse(new File('config.groovy').toURL())
 parameters.resources.each { type, urls ->
 	parameters.resources[type] = (type in ['css', 'js' ] && urls) ?
-		[versionateFile(compressFile(mixFiles(urls), type).path)] : 
+		[versionateFile(/*compressFile(*/mixFiles(urls)/*, type)*/.path)] : 
 		urls.collect { url -> versionateFile(url) }
 }
 
