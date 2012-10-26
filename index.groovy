@@ -1,5 +1,15 @@
+@Grapes(
+  @Grab(
+    group='com.yahoo.platform.yui', 
+    module='yuicompressor', 
+    version='2.4.6'
+  )
+)
 import groovy.text.SimpleTemplateEngine
 import java.security.MessageDigest
+import com.yahoo.platform.yui.compressor.CssCompressor
+import com.yahoo.platform.yui.compressor.JavaScriptCompressor
+import org.mozilla.javascript.ErrorReporter
 
 def withNewFile(File file, closure)
 {
@@ -28,7 +38,18 @@ def versionateFile(filePath, file = new File(filePath)) {
 	new File("$file.${md5(file)}") << file.bytes
 }
 
-String mixFiles(files) {
+def compressFile(file, type, reader = new FileReader(file), reporter = [:] as ErrorReporter) {
+	new File("${file.path}_compressed").with {
+		withWriter { writer ->
+			if (type == 'css') new CssCompressor(reader).compress(writer, 1024)
+			else if (type == 'js') new JavaScriptCompressor(reader, reporter).compress(
+				writer, 1024, false, false, true, true)
+		}
+		delegate
+	}
+}
+
+def mixFiles(files) {
 	def file = new File((files*.toString()).join('_'))
 	file << files.collect { new File(it).text }.join("\n")
 }
@@ -36,7 +57,7 @@ String mixFiles(files) {
 def parameters =  new ConfigSlurper().parse(new File('config.groovy').toURL())
 parameters.resources.each { type, urls ->
 	parameters.resources[type] = (type in ['css', 'js' ] && urls) ?
-		[versionateFile(mixFiles(urls))] : 
+		[versionateFile(compressFile(mixFiles(urls), type).path)] : 
 		urls.collect { url -> versionateFile(url) }
 }
 

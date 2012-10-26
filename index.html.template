@@ -26,7 +26,7 @@
             urls.collect { url ->
                 type == 'css' ? "<link rel='stylesheet' type='text/css' href='$url' />" :
                 type == 'ico' ? "<link rel='shortcut icon' href='$url' />" :
-                type == 'js' ? "<script type='text/javascript' src='$url' />" : ""
+                type == 'js' ? "<script type='text/javascript' src='$url' ></script>" : ""
             }.join('\n')
         }.join('\n')
     }

@@ -82,5 +82,5 @@ resources =
 	[
 		ico: ['favicon.ico'],
 		css: ['aboutme.css', 'fonts.css'],
-		js: [],
+		js: ['aboutme.js'],
 	]

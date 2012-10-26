@@ -1,5 +1,5 @@
 #!/bin/bash
 
 git pull origin master
-rm *.{css,js,ico}.*
+rm *.{css,js}_* *.ico.*
 groovy index.groovy
