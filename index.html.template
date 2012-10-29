@@ -4,7 +4,7 @@
         links.collect { linkAttr -> """
             <li class='$linkAttr.tag'>
                 <a href='$linkAttr.url' title='$linkAttr.title'><img title='$linkAttr.title' 
-                    alt='$linkAttr.title'src='${linkAttr.tag}.png'/></a>
+                    alt='$linkAttr.title' src='data:image/png;base64,${new File(linkAttr.tag+'.png').bytes.encodeBase64()}'/></a>
             </li>"""
         }.join()
     }
