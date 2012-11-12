@@ -38,6 +38,7 @@ professional_links =
 	[
 		[title: 'Linked In', tag: 'linked-in', url: 'http://www.linkedin.com/in/dtoharia'],
 		[title: 'CV', tag: 'cv', url: 'http://diego.toharia.com/cv'],
+                [title: 'Github activity', tag: 'github', url: "https://github.com/${nickname}?tab=activity"],
 		[title: 'Blog', tag: 'blog', url:  'http://blog.deigote.com/category/informatica-internet-y-tecnologia/'],
 		[title: "Me at $company", tag: 'job', url: 'http://osoco.es/equipo#dtoha'],
 		[title: "I Do The Shopping, a pet project written in Groovy and Grails", tag: 'idotheshopping', url: 'http://idotheshopping.com'],
