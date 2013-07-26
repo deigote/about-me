@@ -42,8 +42,8 @@ professional_links =
                 [title: 'Github activity', tag: 'github', url: "https://github.com/${nickname}?tab=activity"],
 		[title: 'Blog', tag: 'blog', url:  'http://blog.deigote.com/category/informatica-internet-y-tecnologia/'],
 		[title: "Me at $company", tag: 'job', url: 'http://http://www.tado.com/en/team.html'],
-		[title: "I Do The Shopping, a pet project written in Groovy and Grails", tag: 'idotheshopping', url: 'http://idotheshopping.com'],
-		[title: "My Best Lap, a pet project written in Ruby on Rails", tag: 'mybestlap', url: 'http://mybestlap.com']
+		[title: "I Do The Shopping, a pet project written in Groovy and Grails", tag: 'idotheshopping', url: 'http://idotheshopping.com/list/show/1']
+//		[title: "My Best Lap, a pet project written in Ruby on Rails", tag: 'mybestlap', url: 'http://mybestlap.com']
 	]
 personal_paragraphs =
 	[
