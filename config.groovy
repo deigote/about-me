@@ -27,9 +27,10 @@ professional_paragraphs =
 		"""I am a software engineer who has passion for <strong>software 
 	developing</strong>. I work for <a href="http://tado.com">$company</a> 
 	with an <a href="http://www.tado.com/en/team.html">awesome team</a> making 
-	an <em>Internet of the things</em> super cool product. I usually speak 
-	<strong>Groovy</strong>, but my <em>mother tongue</em> is <strong>Java</strong>, and 
-	I have wide experience developing <strong>web applications</strong>.""",
+	an smart thermostat aims to be part of the <em>Internet of things</em> era. I 
+	usually speak <strong>Groovy</strong>, but my <em>mother tongue</em> is 
+	<strong>Java</strong>, and I have wide experience developing <strong>web 
+	applications</strong>.""",
 		"""On the other hand, I enjoy <strong>Linux</strong> system administration a 
 	lot, and I have being able to explote such passion by exercising as <strong>sysadmin
 	</strong> in complex cloud-based production systems that use <strong>Amazon AWS</strong> 
