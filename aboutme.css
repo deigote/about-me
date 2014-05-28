@@ -59,6 +59,15 @@ div#main-content {
     margin-right: 10px;
 }
 
+.learn-more .links img:hover {
+   transform: scale(1.5);
+   -webkit-transform: scale(1.5);
+   -moz-transform: scale(1.5);
+   transition: 0.25s all ease;
+   -webkit-transition: 0.25s all ease;
+   -moz-transition: 0.25s all ease;
+}
+
 div#personal .icon {
     background-image: url('personal.png');
 }
