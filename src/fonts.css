@@ -1,0 +1,99 @@
+body { text-shadow: 0 1px 0 rgba(0,0,0,0.01); }
+
+body { font-family: "Ubuntu", "Arial", "Helvetica", "Lucida Grande", "Verdana", "Gill Sans", sans-serif; font-size: 14px }
+
+h1, h2 { font-family: "Sansation", "Lucida Grande", "Verdana", "Arial", "Gill Sans", "Helvetica", sans-serif; ;}
+
+.learn-more { font-family: "Lobster 13", cursive; font-size: 20px; }
+
+.afs-inconsolata { font-family: "Inconsolata", Menlo, Courier New, Courier, Mono, monospace; font-size: 1.125em;}
+
+@font-face {
+  font-family: 'Sansation';
+  src: url('../fonts/Sansation_Bold-webfont.eot');
+  src: local('☺'), url('../fonts/Sansation_Bold-webfont.woff') format('woff'), url('../fonts/Sansation_Bold-webfont.ttf') format('truetype'), url('../fonts/Sansation_Bold-webfont.svg#webfontX4pGz9fc') format('svg');
+  font-weight: 700;
+  font-style: normal;
+}
+
+
+@font-face {
+  font-family: 'Sansation';
+  src: url('../fonts/Sansation_Light-webfont.eot');
+  src: local('☺'), url('../fonts/Sansation_Light-webfont.woff') format('woff'), url('../fonts/Sansation_Light-webfont.ttf') format('truetype'), url('../fonts/Sansation_Light-webfont.svg#webfontX4pGz9fc') format('svg');
+  font-weight: 200;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Sansation';
+  src: url('../fonts/Sansation_Regular-webfont.eot');
+  src: local('☺'), url('../fonts/Sansation_Regular-webfont.woff') format('woff'), url('../fonts/Sansation_Regular-webfont.ttf') format('truetype'), url('../fonts/Sansation_Regular-webfont.svg#webfontX4pGz9fc') format('svg');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Ubuntu';
+  src: url('../fonts/Ubuntu-B-webfont.eot');
+  src: local('☺'), url('../fonts/Ubuntu-B-webfont.woff') format('woff'), url('../fonts/Ubuntu-B-webfont.ttf') format('truetype'), url('../fonts/Ubuntu-B-webfont.svg#webfontX4pGz9fc') format('svg');
+  font-weight: 700;
+  font-style: normal;
+}
+
+
+@font-face {
+  font-family: 'Ubuntu';
+  src: url('../fonts/Ubuntu-BI-webfont.eot');
+  src: local('☺'), url('../fonts/Ubuntu-BI-webfont.woff') format('woff'), url('../fonts/Ubuntu-BI-webfont.ttf') format('truetype'), url('../fonts/Ubuntu-BI-webfont.svg#webfontX4pGz9fc') format('svg');
+  font-weight: 700;
+  font-style: italic;
+}
+
+
+@font-face {
+  font-family: 'Ubuntu';
+  src: url('../fonts/Ubuntu-RI-webfont.eot');
+  src: local('☺'), url('../fonts/Ubuntu-RI-webfont.woff') format('woff'), url('../fonts/Ubuntu-RI-webfont.ttf') format('truetype'), url('../fonts/Ubuntu-RI-webfont.svg#webfontX4pGz9fc') format('svg');
+  font-weight: 400;
+  font-style: italic;
+}
+
+
+@font-face {
+  font-family: 'Ubuntu';
+  src: url('../fonts/Ubuntu-R-webfont.eot');
+  src: local('☺'), url('../fonts/Ubuntu-R-webfont.woff') format('woff'), url('../fonts/Ubuntu-R-webfont.ttf') format('truetype'), url('../fonts/Ubuntu-R-webfont.svg#webfontX4pGz9fc') format('svg');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Museo Slab';
+  src: url('fonts/museo_slab_500italic-webfont.eot');
+  src: local('☺'), url('fonts/museo_slab_500italic-webfont.woff') format('woff'), url('fonts/museo_slab_500italic-webfont.ttf') format('truetype'), url('fonts/museo_slab_500italic-webfont.svg#webfontX4pGz9fc') format('svg');
+  font-weight: 400;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Lobster 13';
+  src: url('../fonts/Lobster_1.3-webfont.eot');
+  src: local('☺'), url('../fonts/Lobster_1.3-webfont.woff') format('woff'), url('../fonts/Lobster_1.3-webfont.ttf') format('truetype'), url('../fonts/Lobster_1.3-webfont.svg#webfontX4pGz9fc') format('svg');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Inconsolata';
+  src: url('fonts/Inconsolata-webfont.eot');
+  src: local('☺'), url('fonts/Inconsolata-webfont.woff') format('woff'), url('fonts/Inconsolata-webfont.ttf') format('truetype'), url('fonts/Inconsolata-webfont.svg#webfontX4pGz9fc') format('svg');
+  font-weight: 500;
+  font-style: normal;
+}
+
+
+
+
+
+
