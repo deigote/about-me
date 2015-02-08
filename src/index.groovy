@@ -1,15 +1,22 @@
+import groovy.io.FileType
 @Grapes(
   @Grab(
-    group='com.yahoo.platform.yui', 
-    module='yuicompressor', 
+    group='com.yahoo.platform.yui',
+    module='yuicompressor',
     version='2.4.6'
   )
 )
 import groovy.text.SimpleTemplateEngine
+
+import java.nio.file.Files
+import java.nio.file.Paths
 import java.security.MessageDigest
-import com.yahoo.platform.yui.compressor.CssCompressor
-import com.yahoo.platform.yui.compressor.JavaScriptCompressor
-import org.mozilla.javascript.ErrorReporter
+
+outputPath = args.getAt(0) ?: './'
+outputDir = new File(outputPath)
+if (!outputDir.exists()) {
+	outputDir.mkdir()
+}
 
 def withNewFile(File file, closure)
 {
@@ -34,19 +41,12 @@ def md5(file) {
 	}).toString( 16 ).padLeft( 32, '0' )
 }
 
-def versionateFile(filePath, file = new File(filePath)) { 
-	new File("$file.${md5(file)}") << file.bytes
-}
-
-def compressFile(file, type, reader = new FileReader(file), reporter = [:] as ErrorReporter) {
-	new File("${file.path}_compressed").with {
-		withWriter { writer ->
-			if (type == 'css') new CssCompressor(reader).compress(writer, 1024)
-			else if (type == 'js') new JavaScriptCompressor(reader, reporter).compress(
-				writer, 1024, false, false, true, true)
-		}
-		delegate
-	}
+def versionateFile(filePath, file = new File(filePath)) {
+	def filePathParts = filePath.tokenize('.'),
+		fileNamePrefix = filePathParts[0..-2].join(''),
+		fileNameExt = filePathParts.last(),
+		fileName = "${outputPath}${fileNamePrefix}__${md5(file)}.${fileNameExt}"
+	new File(fileName) << file.bytes
 }
 
 def mixFiles(files) {
@@ -57,10 +57,18 @@ def mixFiles(files) {
 def parameters =  new ConfigSlurper().parse(new File('config.groovy').toURL())
 parameters.resources.each { type, urls ->
 	parameters.resources[type] = (type in ['css', 'js' ] && urls) ?
-		[versionateFile(/*compressFile(*/mixFiles(urls)/*, type)*/.path)] : 
+		[versionateFile(/*compressFile(*/mixFiles(urls)/*, type)*/.path)] :
 		urls.collect { url -> versionateFile(url) }
 }
 
-new File('index.html').write(new SimpleTemplateEngine().createTemplate(
+new File("${outputPath}index.html").write(new SimpleTemplateEngine().createTemplate(
 	new java.io.FileReader(new File('index.html.template'))
 ).make(parameters).toString())
+
+if (!(outputPath in ['', './'])) {
+	new File('.').traverse(type: FileType.FILES) { file ->
+		if (['png', 'jpg'].any { extensionToCopy -> file.path.endsWith(extensionToCopy) }) {
+			Files.copy(Paths.get(file.path), Paths.get("${outputPath}${file.path}"))
+		}
+	}
+}
