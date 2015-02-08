@@ -3,7 +3,7 @@ siteURL = "http://$siteName"
 nickname = "deigote"
 name = "Diego Toharia"
 author = "$name (also known as $nickname)"
-company = "tadoº"
+company = "tado GmbH"
 clear = "<div style='clear:both; height: 0; width: 0'>&nbsp</div>"
 title = "About $author" 
 shortDescription= """$author is a software engineer that develops software for $company using 
@@ -25,16 +25,15 @@ keywords =
 professional_paragraphs = 
 	[
 		"""I am a software engineer who has passion for <strong>software 
-	developing</strong>. I work for <a href="http://tado.com">$company</a> 
-	with a <a href="http://www.tado.com/en/team.html">great team</a> making a 
-	smart thermostat that aims to be part of the <em>Internet of things</em> era. I 
-	usually speak <strong>Groovy</strong>, but my <em>mother tongue</em> is 
-	<strong>Java</strong>, and I have wide experience developing <strong>web 
-	applications</strong>.""",
+	developing</strong>. I work for <a href="http://tado.com">$company</a>, where
+	we are developing a smart thermostat that aims to be part of the <em>Internet 
+	of things</em> era. I usually speak <strong>Groovy</strong>, but my <em>mother
+	tongue</em> is <strong>Java</strong>, and I have wide experience developing 
+	<strong>web applications</strong>.""",
 		"""On the other hand, I enjoy <strong>Linux</strong> system administration a 
 	lot, and I have being able to explote such passion by exercising as <strong>sysadmin
-	</strong> in complex cloud-based production systems that use <strong>Amazon AWS</strong> 
-	and <strong>Puppet</strong>."""
+	</strong> in complex cloud-based production systems that use <strong>Amazon 
+	AWS</strong>, <strong>Puppet</strong> and <strong>Docker</strong>"""
 	]
 professional_links =
 	[
