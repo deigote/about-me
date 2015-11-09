@@ -9,4 +9,7 @@ if [ ! -z "$1" ] ; then
 fi
 
 cd docker && docker build -t about-me-updater . && cd -
-docker run --rm -v $(pwd):/about-me-src -v $OUTPUT_DIR:/about-me about-me-updater bash -c "cd /about-me-src && ./install.sh /about-me"
+docker run --rm -v $(pwd):/about-me-src -v $OUTPUT_DIR:/about-me about-me-updater bash -c "cd /about-me-src/ && ./install.sh /about-me/"
+for i in 'about-me' 'about-me/' ; do
+	curl -X PURGE "http://deigote.com/$i" &> /dev/null
+done
