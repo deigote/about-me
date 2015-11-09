@@ -1,8 +1,13 @@
-FROM webratio/groovy:2.3.9
+FROM java:8-jre
 
-# Install git
+ADD http://dl.bintray.com/groovy/maven/apache-groovy-binary-2.4.5.zip /opt/groovy.zip
 RUN \
-	apt-get update && \
-	apt-get install -y git
+	cd /opt && \
+	unzip groovy.zip && \
+	rm groovy.zip
 
-ENTRYPOINT ["/about-me-src/install.sh", "/about-me/"]
+ENV JAVA_HOME /usr/lib/jvm/java-8-openjdk-amd64/jre/
+ENV GROOVY_HOME /opt/groovy-2.4.5
+ENV PATH $GROOVY_HOME/bin:$PATH
+
+# ENTRYPOINT ["groovy", "-Dgrape.root=/graperoot"]
