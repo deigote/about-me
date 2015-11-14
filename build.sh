@@ -8,7 +8,7 @@ if [ ! -z "$1" ] ; then
 	OUTPUT_DIR="$1"
 fi
 
-cd docker && docker build -t about-me-updater . && cd -
+docker build -t about-me-updater . 
 docker run --rm -v $(pwd):/about-me-src -v $OUTPUT_DIR:/about-me about-me-updater bash -c "cd /about-me-src/ && ./install.sh /about-me/"
 for i in 'about-me' 'about-me/' ; do
 	curl -X PURGE "http://deigote.com/$i" &> /dev/null
