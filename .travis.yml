@@ -4,14 +4,14 @@ before_install:
 - docker build -t about-me-updater .
 script:
 - mkdir build
-- docker run --rm -v $(pwd):/about-me-src -v build:/about-me about-me-updater bash
-  -c "cd /about-me-src/ && ./install.sh /about-me/"
+- docker run --rm -v $(pwd):/about-me-src -v build:/about-me about-me-updater bash -c "cd /about-me-src/ && ./install.sh /about-me/"
+- tar jcvf build.tar.bz2 build
 - sudo chown -R $USER:$USER ./build
 deploy:
   provider: releases
   api_key:
     secure: QNDBupd6Nb0ORIDL6IjrXzNU89u6WFPvkhYuEkGSBGCAqaXFe4maTikGHEAmNKSJ/cL2fuLKqPLpvu06rVSD2SXzDZxMdhDDIR29bqemDt1PLFGyWI3j+ALoBv84GyVlv6tpB/sIPMbKuLTSKks7adeA43Ts9jvXY5UUZ4+eMlU=
-  file: build
+  file: build.tar.bz2
   on:
     repo: deigote/about-me
     tags: true
