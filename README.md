@@ -1,8 +1,7 @@
 # about-me
 
-This is a typical `about me` page that was use as an excuse to have some fun creating a simple, 
-staticpage using `Groovy` for generating the content, `Docker` for building it, and `Travis CI` 
-for deploying it.
+This `about me` page was an excuse to have some fun creating a simple, static page using `Groovy` 
+for generating the content, `Docker` for building it, and `Travis CI` for deploying it.
 
 [![Build Status][travis-image]][travis-url] [![Build Status][visit-image]][visit-url]
 
