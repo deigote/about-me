@@ -3,7 +3,7 @@ siteURL = "http://$siteName"
 nickname = "deigote"
 name = "Diego Toharia"
 author = "$name (also known as $nickname)"
-company = "tado GmbH"
+company = "AutoScout24"
 clear = "<div style='clear:both; height: 0; width: 0'>&nbsp</div>"
 title = "About $author" 
 shortDescription= """$author is a software engineer that develops software for $company using 
@@ -25,11 +25,11 @@ keywords =
 professional_paragraphs = 
 	[
 		"""I am a software engineer who has passion for <strong>software 
-	developing</strong>. I work for <a href="http://tado.com">$company</a>, where
-	we are developing a smart thermostat that aims to be part of the <em>Internet 
-	of things</em> era. I usually speak <strong>Groovy</strong>, but my <em>mother
-	tongue</em> is <strong>Java</strong>, and I have wide experience developing 
-	<strong>web applications</strong>.""",
+	developing</strong>. I work at <a href="http://www.autoscout24.com">$company</a>, where
+	we are breaking a monolith down into microservices that run in the AWS cloud. I lately
+	speak <strong>Scala</strong>, but I've been talking <strong>Groovy</strong> for years
+	and I still consider <strong>Java</strong> my <em>mother tongue</em>. I also have 
+	wide experience developing <strong>web applications</strong>.""",
 		"""On the other hand, I enjoy <strong>Linux</strong> system administration a 
 	lot, and I have being able to explote such passion by exercising as <strong>sysadmin
 	</strong> in complex cloud-based production systems that use <strong>Amazon 
@@ -41,7 +41,7 @@ professional_links =
 //		[title: 'CV', tag: 'cv', url: 'http://diego.toharia.com/cv'],
                 [title: 'Github activity', tag: 'github', url: "https://github.com/${nickname}?tab=activity"],
 		[title: 'Blog', tag: 'blog', url:  'http://blog.deigote.com/category/informatica-internet-y-tecnologia/'],
-		[title: "Me at $company", tag: 'job', url: 'http://http://www.tado.com/en/team.html'],
+		[title: "$company", tag: 'job', url: 'http://www.autoscout24.com'],
 		[title: "I Do The Shopping, a pet project written in Groovy and Grails", tag: 'idotheshopping', url: 'http://idotheshopping.com/list/show/1']
 //		[title: "My Best Lap, a pet project written in Ruby on Rails", tag: 'mybestlap', url: 'http://mybestlap.com']
 	]
